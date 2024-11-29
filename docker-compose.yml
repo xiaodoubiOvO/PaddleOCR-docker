@@ -1,0 +1,15 @@
+services:
+  ocr:
+    build:
+      context: .
+      dockerfile: ocr.Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8866:8866"
+  app:
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    restart: unless-stopped
+    ports:
+      - "7860:7860"
